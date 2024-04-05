@@ -82,14 +82,14 @@
           <div class="card-body text-center py-4">
             <form id="form">
               <div class="mb-3">
-                <input type="email" class="form-control required" id="uniqueEmail" aria-describedby="emailHelp" placeholder="Enter your email" p>
+                <input type="email" class="form-control required" name="email" id="uniqueEmail" aria-describedby="emailHelp" placeholder="Enter your email" p>
                 <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
               </div>
               <div class="mb-3">
-                <input type="password" class="form-control required" id="keyPassword" placeholder="Enter password">
+                <input type="password" class="form-control required" name="password" id="keyPassword" placeholder="Enter password">
               </div>
               <div class="mb-3 form-check text-start">
-                <input type="checkbox" class="form-check-input" id="Check1">
+                <input type="checkbox" class="form-check-input" name="checkbox" id="Check1">
                 <label class="form-check-label label-lighter" for="Check1">Remember me</label>
               </div>
               <button type="btn" class="btn btn-outlin-primary" style="background-color: crimson;color: azure;">login</button>
@@ -112,7 +112,7 @@
       <div class="accordion-body">
         <ul class="list-group list-group-flush" style="color: #2c5e2e; font-family: arial;">
           <input class="purpose" style="font-family: arial; font-size: 12px;border: 1px solid #2c5e2e; border-radius: 3px ;height: 35px;" type="text" placeholder="What do you hope to achieve through fitness ">
-          <ul class="list-group list-group-flush">
+          <ul class="checkbox checkbox-flush">
             <li class="list-group-item">
               <label>
                 <input type="checkbox" name="goal" value="Weight loss"> Weight loss
