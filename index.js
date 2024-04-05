@@ -78,4 +78,22 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const goalInput = document.getElementById("goalInput");
+  const goalList = document.getElementById("goalList");
+
+  goalInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const goalText = goalInput.value.trim();
+      if (goalText !== "") {
+        const listItem = document.createElement("li");
+        listItem.textContent = goalText;
+        goalList.appendChild(listItem);
+        goalInput.value = "";
+      }
+    }
+  });
+});
+
 
