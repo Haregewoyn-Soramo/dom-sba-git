@@ -113,5 +113,24 @@ goalInput.addEventListener("keypress", function(event) {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const progressForm = document.getElementById("progressForm");
+  const workoutInput = document.getElementById("workout");
 
+  progressForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const workoutTime = parseInt(workoutInput.value);
+
+    if (workoutTime > 60) {
+      alert("Excellent! Keep up the big progress!");
+    } else if (workoutTime < 15) {
+      alert("You need to do more. Keep pushing!");
+    } else {
+      alert("Nice job! Keep working!");
+    }
+
+    // Clear input field after submission
+    workoutInput.value = "";
+  });
+});
 
