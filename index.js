@@ -96,4 +96,22 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+goalInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    const goalText = goalInput.value.trim();
+    if (goalText !== "") {
+      const listItem = document.createElement("li");
+      listItem.textContent = goalText;
+      listItem.classList.add("list-group-item");
+      listItem.addEventListener("click", function() {
+        goalList.removeChild(listItem);
+      });
+      goalList.appendChild(listItem);
+      goalInput.value = "";
+    }
+  }
+});
+
+
 
