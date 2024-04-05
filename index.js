@@ -1,8 +1,26 @@
-//1. Create at least one element using createElement.
-const newElement = document.createElement('div');
 
-// 2. Use appendChild and/or prepend to add new elements to the DOM.
-document.body.appendChild(newElement);
+
+
+ // Accessing parent element
+ const form = document.getElementById('form');
+
+ // Accessing first child of the parent
+ const email = form.element('uniqueEmail')
+
+ // Accessing last child of the parent
+ const password = form.element('keyPassword')
+
+  const ul = document.querySelector('.list-group-item');
+//  Element to cache //
+const progress=document.getElementById('progressForm')
+
+//1. Create at least one element using createElement.
+const newprogress = document.createElement('li');
+// Set the text content of the new li element
+newprogress.textContent = 'marathon';
+// Append the new li element to the parent list
+progress.appendChild(newprogress);
+
 
 // 3. Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content.
 const template = document.createElement('template');
@@ -16,6 +34,14 @@ elementToModify.textContent = 'New content';
 // 5. Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
 const elementToStyle = document.querySelector('.some-element');
 elementToStyle.style.color = 'red';
+
+ // Get the collection of list items
+ const listItems = document.querySelectorAll('#list li');
+
+ // Iterate over the collection of list items
+ listItems.forEach((item, index) => {
+     // Task: Update the text content of each list item
+     item.textContent = `New Item ${index + 1}`;
 
 // 6. Modify at least one attribute of an element in response to user interaction.
 const elementToModifyAttribute = document.querySelector('.some-element');
