@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Clear input field after submission
     workoutInput.value = "";
+    progressForm.submit();
   });
 });
 
