@@ -17,7 +17,7 @@
     */
   </style>
 </head>
-<body style="color: crimson;">
+<body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light shadow p-3 mb-5 rounded" style="background-color: crimson;">
       <div class="container-xxl">
@@ -57,7 +57,9 @@
       <div class="row justify-content-center g-5">
           <div class="col-md-5 text-center">
               <h1>
-                  <div class="display-2">Fitness Tracker</div>
+                  <div class="display-2">
+                    <h1>Fitness Tracker</h1>
+                  </div>
               </h1>
               <p class="lead my-4 text-muted" style="font-family: arial;">Fitness Tracker: Your personalized health companion. Log in to your account to track your fitness journey seamlessly. Stay motivated, set goals, and monitor your progress with ease. With our intuitive platform, access all your fitness data in one place, empowering you to achieve your health and wellness goals effectively.</p>
               <a href="#Login" class="btn btn-secondary btn-lg d-none">Login</a>
@@ -73,16 +75,17 @@
 <!-- login and signup page -->
 <section id="Login" class = "bg-light mt-5">
   <div class="container-lg">
-    <div class="text-center">
+    <div class="log" style="text-align: center;">
       <h1>Login here</h1>
     </div>
     <div class="row my-1 justify-content-center align-items-center ">
       <div class="col-6 col-lg-6">
         <div class="card shadow p-5 bg-body-tertiary rounded">
           <div class="card-body text-center py-4">
+            <div class="notification-container" id="notification-container"></div>
             <form id="form">
               <div class="mb-3">
-                <input type="email" class="form-control required" name="email" id="uniqueEmail" aria-describedby="emailHelp" placeholder="Enter your email" required>
+                <input type="text" class="form-control required" name="email" id="uniqueEmail" aria-describedby="emailHelp" placeholder="Enter your email" required>
                 <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
               </div>
               <div class="mb-3">

@@ -1,59 +1,3 @@
-  const emailInput = document.getElementById("uniqueEmail");
-  const passwordInput = document.getElementById("keyPassword");
-  emailInput.addEventListener('input', function () {
-    const emailValue = emailInput.value;
-    if (!/[A-Z]/.test(emailValue)) {
-      showNotification('Email must contain at least one capital letter');
-      return false;
-    }
-    if (!/\d/.test(emailValue)) {
-      showNotification('Email must contain at least one number');
-      return false;
-    }
-
-    if (emailValue.indexOf('@') === -1) {
-      showNotification('Email must contain at least one @ character');
-      return false;
-    }
-    const atIndex = emailValue.indexOf('@');
-    const dotIndex = emailValue.lastIndexOf('.');
-    const domain = emailValue.substring(atIndex + 1, dotIndex);
-    if (domain.length < 2) {
-      alert('Email domain should be at least 2 characters long');
-      return false;
-    }
-    if (emailValue.length < 8 || emailValue.length > 15) {
-      showNotification('Email length should be between 8 and 15 characters');
-      return false;
-    }
-  });
-
-  passwordInput.addEventListener('input', function () {
-    const passwordValue = passwordInput.value;
-    if (!/[A-Z]/.test(passwordValue)) {
-      showNotification('Password must contain at least one capital letter');
-      return false;
-    }
-    if (!/\d/.test(passwordValue)) {
-      showNotification('Password must contain at least one number');
-      return false;
-    }
-    if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordValue)) {
-      ashowNotification('Password must contain at least one special character');
-      return false;
-    }
-    if (passwordValue.length !== new Set(passwordValue).size) {
-      showNotification('Password must contain unique characters');
-      return false;
-    }
-    if (passwordValue.length < 8 || passwordValue.length > 12) {
-      showNotification('Password length should be between 8 and 12 characters');
-      return false;
-    }
-  });
-
-    
-
 
 document.addEventListener("DOMContentLoaded", function() {
   const goalInput = document.getElementById("goalInput");
@@ -112,3 +56,59 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const emailInput = document.querySelector("#uniqueEmail");
+  const passwordInput = document.querySelector("#keyPassword");
+  const loginForm = document.getElementById("form"); // Assuming your form has id="form"
+
+  // Function to show notification
+  function showNotification(message) {
+    const notificationContainer = document.getElementById("notification-container");
+    const notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.textContent = message;
+    notificationContainer.appendChild(notification);
+    setTimeout(() => {
+      notification.remove(); // Remove notification after 3 seconds
+    }, 3000);
+  }
+
+  // Function to validate email
+  function validateEmail(email) {
+    const atIndex = email.indexOf('@');
+    const dotIndex = email.lastIndexOf('.');
+    const domain = email.substring(atIndex + 1, dotIndex);
+    return email.length >= 8 && /[A-Z]/.test(email) && /\d/.test(email) && atIndex !== -1 && dotIndex !== -1 && dotIndex > atIndex + 1 && domain.length >= 3;
+  }
+
+  function validatePassword(password) {
+    return password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*(),.?":{}|<>]/.test(password);
+  }
+
+  loginForm.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const emailValue = emailInput.value;
+    const passwordValue = passwordInput.value;
+    if (!validateEmail(emailValue)) {
+      showNotification('Email is invalid. Make sure it contains at least 8 characters, one capital letter, one number, one "@" symbol, one "." after "@" and at least 3 characters after "@"');
+      return;
+    }
+    if (!validatePassword(passwordValue)) {
+      showNotification('Password is invalid. Make sure it contains at least 8 characters, one capital letter, one number, and one special character.');
+      return;
+    }
+    console.log('Login successful!');
+  });
+});
+const loginHeader = document.querySelector('.log > h1');
+loginHeader .style.color = "crimson";
+loginHeader .style.fontFamily = "Arial"; 
+const headerTitle = document.querySelector('.display-2 > h1');
+headerTitle.style.color = "crimson";
+headerTitle.style.fontFamily = "Arial"; 
+
+const paragraphs = document.querySelectorAll('p');
+paragraphs.forEach(paragraph => {
+    paragraph.style.color = 'crimson';
+});
