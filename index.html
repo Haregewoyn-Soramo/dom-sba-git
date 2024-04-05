@@ -149,12 +149,11 @@
               <label for="workout" style="font-weight: bold;color: black;">Workout Time (mins):</label>
               <input type="number" id="workout" name="workout" required style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: calc(100% - 90px);">
             </div>
-            
-            <button class="btn" type="submit" style="background-color: crimson; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
-
             <ul id="progressOutput" class="list-group list-group-flush" style="color: #2c5e2e; font-family: arial; margin-top: 10px;">
               <li class="pout"></li>
             </ul>
+            <button class="btn bg-primary" style="color: white;" onclick="saveData()">Save Data</button>
+            <button class="btn bg-primary" style="color: white;" onclick="showConfirmation()">Show Confirmation</button>
           </fieldset>
         </form>
       </div>

@@ -127,12 +127,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-const buttons = document.getElementsByClassName('btn');
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', function() {
-    this.classList.toggle('active');
-  });
-}
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.getElementsByClassName('btn');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+      this.classList.toggle('active');
+      if (this.classList.contains('active')) {
+        this.style.color = 'yellow'; 
+        this.focus();
+      } else {
+        this.style.color = ''; 
+      }
+    });
+  }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-link')
@@ -150,3 +158,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+function saveData() {
+  var workoutTime = document.getElementById('workout').value;
+  if (workoutTime === '') {
+    alert('Please enter a workout time.');
+    return;
+  }
+  else{
+  window.localStorage.setItem('workoutTime', workoutTime);
+  alert('Data saved successfully!');
+}
+}
+function showConfirmation() {
+  if (window.confirm('Are you sure you want to show the data?')) {
+      var savedWorkoutTime = window.localStorage.getItem('workoutTime');
+      if (savedWorkoutTime) {
+          alert('Your saved workout time: ' + savedWorkoutTime + ' mins');
+      } else {
+          alert('No data found!');
+      }
+  } else {
+      alert('Show data cancelled.');
+  }
+}
