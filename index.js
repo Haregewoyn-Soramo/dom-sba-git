@@ -1,34 +1,32 @@
-const emailInput = document.getElementById("uniqueEmail")
-emailInput.addEventListener('click', function() {
-   emailInput.addEventListener('input', function () {
+  const emailInput = document.getElementById("uniqueEmail");
+  const passwordInput = document.getElementById("keyPassword");
+  emailInput.addEventListener('input', function () {
     const emailValue = emailInput.value;
-    let missingRequirements = [];
-    const dotPos = emailValue.lastIndexOf('.');
-if (!/[A-Z]/.test(emailValue)) {
-  missingRequirements.push('at least one capital letter');
-}
-else if (emailValue.indexOf('@') === -1) {
-  missingRequirements.push('at least one @ character');
-}
-else if (!/\d/.test(emailValue)) {
-  missingRequirements.push('at least one number');
-}
-else if (dotPos === -1 || emailValue.length - dotPos < 4) {
-  missingRequirements.push('at least one dot(.) character');
-}
-else if (missingRequirements.length > 0) {
-  emailErrorMessage.textContent = 'The email must contain ' + missingRequirements.join(', ') + '.';
-} else {
-  emailErrorMessage.textContent = '';
-  missingRequirements = '';
-}
-    emailInput.focus()
-});
-emailInput.addEventListener('focus', function () {
-emailErrorMessage.textContent = '';
-emailInput.focus()
-});
-});
+    if (!/[A-Z]/.test(emailValue)) {
+      alert('Email must contain at least one capital letter');
+      return;
+    }
+    if (!/\d/.test(emailValue)) {
+      alert('Email must contain at least one number');
+      return;
+    }
+
+    if (emailValue.indexOf('@') === -1) {
+      alert('Email must contain at least one @ character');
+      return;
+    }
+    const atIndex = emailValue.indexOf('@');
+    const dotIndex = emailValue.lastIndexOf('.');
+    const domain = emailValue.substring(atIndex + 1, dotIndex);
+    if (domain.length < 2) {
+      alert('Email domain should be at least 2 characters long');
+      return;
+    }
+    if (emailValue.length < 8 || emailValue.length > 15) {
+      alert('Email length should be between 8 and 15 characters');
+      return;
+    }
+  });
 
     
 
