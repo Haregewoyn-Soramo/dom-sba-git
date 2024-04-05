@@ -3,28 +3,52 @@
   emailInput.addEventListener('input', function () {
     const emailValue = emailInput.value;
     if (!/[A-Z]/.test(emailValue)) {
-      alert('Email must contain at least one capital letter');
-      return;
+      showNotification('Email must contain at least one capital letter');
+      return false;
     }
     if (!/\d/.test(emailValue)) {
-      alert('Email must contain at least one number');
-      return;
+      showNotification('Email must contain at least one number');
+      return false;
     }
 
     if (emailValue.indexOf('@') === -1) {
-      alert('Email must contain at least one @ character');
-      return;
+      showNotification('Email must contain at least one @ character');
+      return false;
     }
     const atIndex = emailValue.indexOf('@');
     const dotIndex = emailValue.lastIndexOf('.');
     const domain = emailValue.substring(atIndex + 1, dotIndex);
     if (domain.length < 2) {
       alert('Email domain should be at least 2 characters long');
-      return;
+      return false;
     }
     if (emailValue.length < 8 || emailValue.length > 15) {
-      alert('Email length should be between 8 and 15 characters');
-      return;
+      showNotification('Email length should be between 8 and 15 characters');
+      return false;
+    }
+  });
+
+  passwordInput.addEventListener('input', function () {
+    const passwordValue = passwordInput.value;
+    if (!/[A-Z]/.test(passwordValue)) {
+      showNotification('Password must contain at least one capital letter');
+      return false;
+    }
+    if (!/\d/.test(passwordValue)) {
+      showNotification('Password must contain at least one number');
+      return false;
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordValue)) {
+      ashowNotification('Password must contain at least one special character');
+      return false;
+    }
+    if (passwordValue.length !== new Set(passwordValue).size) {
+      showNotification('Password must contain unique characters');
+      return false;
+    }
+    if (passwordValue.length < 8 || passwordValue.length > 12) {
+      showNotification('Password length should be between 8 and 12 characters');
+      return false;
     }
   });
 
