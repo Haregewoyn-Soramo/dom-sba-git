@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    section{
+      padding: 60px 0;
+    }
+    /* #Login {
+    background-image: url('/image/bg.webp');
+    background-size: auto;   
+    background-position: center;
+     /* Center the background image */
+    */
+  </style>
+</head>
+<body style="color: crimson;">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light shadow p-3 mb-5 rounded" style="background-color: crimson;">
+      <div class="container-xxl">
+          <a href="#intro" class="navbar-brand">
+              <span class="fw-bold">Fitness Tracker</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+              aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end align-center fw-bold" id="main-nav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a href="#Login" class="nav-link">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#Progress" class="nav-link">Progress</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#goal" class="nav-link">Goal</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="# Recommendations" class="nav-link">Recommendations</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="# User Profiles" class="nav-link">User Profiles</a>
+                </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</section>
+
+<!-- main image and intro text -->
+<section id="intro" style=" display: flex; justify-content: center; align-items: center;">
+  <div class="container-lg">
+      <div class="row justify-content-center g-5">
+          <div class="col-md-5 text-center">
+              <h1>
+                  <div class="display-2">Fitness Tracker</div>
+              </h1>
+              <p class="lead my-4 text-muted" style="font-family: arial;">Fitness Tracker: Your personalized health companion. Log in to your account to track your fitness journey seamlessly. Stay motivated, set goals, and monitor your progress with ease. With our intuitive platform, access all your fitness data in one place, empowering you to achieve your health and wellness goals effectively.</p>
+              <a href="#Login" class="btn btn-secondary btn-lg d-none">Login</a>
+          </div>
+          <div class="col-md-5 text-center d-md-block">
+              <img class="img-fluid" src="/image/fitness.jpeg">
+          </div>
+      </div>
+  </div>
+</section>
+    <!-- </section> --> 
+
+<!-- login and signup page -->
+<section id="Login" class = "bg-light mt-5">
+  <div class="container-lg">
+    <div class="text-center">
+      <h1>Login here</h1>
+    </div>
+    <div class="row my-1 justify-content-center align-items-center ">
+      <div class="col-6 col-lg-6">
+        <div class="card shadow p-5 bg-body-tertiary rounded">
+          <div class="card-body text-center py-4">
+            <form>
+              <div class="mb-3">
+                <label for="uniqueEmail" class="form-label"></label>
+                <input type="email" class="form-control required" id="uniqueEmail" aria-describedby="emailHelp" placeholder="Enter your email">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+              <div class="mb-3">
+                <label for="keyPassword" class="form-label"></label>
+                <input type="password" class="form-control required" id="keyPassword" placeholder="Enter password">
+              </div>
+              <div class="mb-3 form-check text-start">
+                <input type="checkbox" class="form-check-input" id="Check1">
+                <label class="form-check-label label-lighter" for="Check1">Remember me</label>
+              </div>
+              <button type="btn" class="btn btn-outlin-primary" style="background-color: crimson;color: azure;">login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- footer -->
+
+<div id="goal" style="display: flex; justify-content: space-between;">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        <p class="lead my-4 " style="font-family: arial;margin-left: 20px;">Goal</p>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show shadow" style="margin-right: 60px;max-width: 400px; min-width: 300px;">
+      <div class="accordion-body">
+        <ul class="list-group list-group-flush" style="color: #2c5e2e; font-family: arial;">
+          <input class="purpose" style="font-family: arial; font-size: 12px;border: 1px solid #2c5e2e; border-radius: 3px ;height: 35px;" type="text" placeholder="What do you hope to achieve through fitness ">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <label>
+                <input type="checkbox" name="goal" value="Weight loss"> Weight loss
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label>
+                <input type="checkbox" name="goal" value="Muscle gain"> Muscle gain
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label>
+                <input type="checkbox" name="goal" value="Cardiovascular improvement"> Cardiovascular improvement
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label>
+                <input type="checkbox" name="goal" value="Endurance training"> Endurance training
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label>
+                <input type="checkbox" name="goal" value="Flexibility and mobility enhancement"> Flexibility and mobility enhancement
+              </label>
+            </li>
+            <li class="list-group-item">
+              <label>
+                <input type="checkbox" name="goal" value="Strength training"> Strength training
+              </label>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion-item ">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        <p class="lead my-4 " style="font-family: arial;">Progress</p>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+      <div class="accordion-body  shadow">
+        <form id="progressForm" style="max-width: 400px; margin: 0 auto;min-width: 200px;margin-right: 60px;">
+          <fieldset style="border: 2px solid #ccc; padding: 20px; border-radius: 10px;">
+            <legend style="font-weight: bold; font-size: 18px; margin-bottom: 10px; color: #2c5e2e;">Enter Your Progress</legend>
+            
+            <div style="margin-bottom: 15px;">
+              <label for="weight" style="font-weight: bold;color: black;">Weight (lbs):</label>
+              <input type="number" id="weight" name="weight" required style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: calc(100% - 90px);">
+            </div>
+            
+            <div style="margin-bottom: 15px;">
+              <label for="workout" style="font-weight: bold;color: black;">Workout Time (mins):</label>
+              <input type="number" id="workout" name="workout" required style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: calc(100% - 90px);">
+            </div>
+            
+            <button type="submit" style="background-color: #2c5e2e; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="accordion-item" >
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        <p class="lead my-4 " style="font-family: arial; margin-right: 30px;"> Recommendations<p>
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body shadow">
+        <p class="lead my-4 text-muted" style="font-family: arial;font-size: 14px;">Welcome to our fitness community! Your health and safety are our top priorities. Before embarking on any fitness activities, please take a moment to review the following guidelines. It's important to note that the information provided here is for educational purposes only and should not be considered medical advice. Always consult with a healthcare professional before starting any new fitness program. Begin your workout with a proper warm-up to prepare your body for exercise and conclude with a cool-down to aid in recovery. Focus on maintaining proper form and technique throughout your workout to minimize the risk of injury. Gradually progress your workouts to avoid overexertion and promote long-term success. Remember to stay hydrated and fuel your body with nutritious foods to support performance and recovery. Listen to your body and heed any signs of fatigue or discomfort to prevent injury. Rest and recovery are vital components of a balanced fitness routine, so be sure to incorporate rest days into your schedule. When engaging in physical activities, always wear appropriate safety gear, such as helmets or pads, to reduce the risk of injury. Lastly, familiarize yourself with emergency procedures in case of unforeseen circumstances during exercise. Stay safe and enjoy your fitness journey.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <br><br>  
+    <br><br>  
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
