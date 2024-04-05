@@ -49,8 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       alert("Nice job! Keep working!");
     }
-
-    // Clear input field after submission
     workoutInput.value = "";
     progressForm.submit();
   });
@@ -59,9 +57,8 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   const emailInput = document.querySelector("#uniqueEmail");
   const passwordInput = document.querySelector("#keyPassword");
-  const loginForm = document.getElementById("form"); // Assuming your form has id="form"
+  const loginForm = document.getElementById("form"); 
 
-  // Function to show notification
   function showNotification(message) {
     const notificationContainer = document.getElementById("notification-container");
     const notification = document.createElement('div');
@@ -69,11 +66,10 @@ document.addEventListener("DOMContentLoaded", function() {
     notification.textContent = message;
     notificationContainer.appendChild(notification);
     setTimeout(() => {
-      notification.remove(); // Remove notification after 3 seconds
+      notification.remove(); 
     }, 3000);
   }
 
-  // Function to validate email
   function validateEmail(email) {
     const atIndex = email.indexOf('@');
     const dotIndex = email.lastIndexOf('.');
@@ -111,4 +107,46 @@ headerTitle.style.fontFamily = "Arial";
 const paragraphs = document.querySelectorAll('p');
 paragraphs.forEach(paragraph => {
     paragraph.style.color = 'crimson';
+});
+
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+  const weightInput = document.getElementById('weight');
+  const workoutInput = document.getElementById('workout');
+  const goalList = document.getElementById('goalList');
+  const template = document.getElementById('goalListItemTemplate');
+  const listItem = template.content.cloneNode(true);
+  listItem.querySelector('li').textContent = `Weight: ${weightInput.value} lbs, Workout Time: ${workoutInput.value} mins`;
+  goalList.appendChild(listItem);
+  event.target.reset();
+}
+document.addEventListener("DOMContentLoaded", function() {
+  const progressForm = document.getElementById('progressForm');
+  progressForm.addEventListener('submit', handleFormSubmit);
+});
+
+
+const buttons = document.getElementsByClassName('btn');
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.nav-link')
+  navLinks.forEach(function(navLink) {
+    navLink.addEventListener('click', function() {
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+      });
+      navLink.classList.add('active');
+      if (navLink.classList.contains('active')) {
+        navLink.style.color = 'yellow'; 
+      } else {
+        navLink.style.color = ''; 
+      }
+    });
+  });
 });

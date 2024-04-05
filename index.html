@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
   <style>
-    section{
-      padding: 60px 0;
+    #myButton {
+      background-color: crimson;
+      color: white;
     }
-    /* #Login {
-    background-image: url('/image/bg.webp');
-    background-size: auto;   
-    background-position: center;
-     /* Center the background image */
-    */
+    #myButton.active {
+      background-color: yellow; 
+      color: black; 
+    }
   </style>
 </head>
 <body>
@@ -95,7 +95,8 @@
                 <input type="checkbox" class="form-check-input" name="checkbox" id="Check1">
                 <label class="form-check-label label-lighter" for="Check1">Remember me</label>
               </div>
-              <button type="submit" class="btn btn-outlin-primary" style="background-color: crimson;color: azure;">login</button>
+              <button class="btn" type="submit" style="background-color:crimson; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">login</button>
+
             </form>
           </div>
         </div>
@@ -111,8 +112,9 @@
         <p class="lead my-4 " style="font-family: arial;margin-left: 20px;">Goal</p>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show shadow" style="margin-right: 60px;max-width: 400px; min-width: 300px;">
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse " style="margin-right: 60px;max-width: 400px; min-width: 300px;">
       <div class="accordion-body">
+        <template id="goalListItemTemplate"></template>
         <input id="goalInput" type="text" placeholder="Add your goal here" style="width: 100%;">
         <ul id="goalList" class="list-group list-group-flush" style="color: #2c5e2e; font-family: arial; margin-top: 10px;">
           <!-- Goals will be appended here dynamically -->
@@ -121,6 +123,7 @@
             <li class="list-group-item"> Endurance training</li>
             <li class="list-group-item">Flexibility and mobility enhancement</li>
           </ul>
+        </template>
       </div>
     </div>
   </div>
@@ -147,7 +150,11 @@
               <input type="number" id="workout" name="workout" required style="padding: 8px; border-radius: 5px; border: 1px solid #ccc; width: calc(100% - 90px);">
             </div>
             
-            <button type="submit" style="background-color: #2c5e2e; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+            <button class="btn" type="submit" style="background-color: crimson; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+
+            <ul id="progressOutput" class="list-group list-group-flush" style="color: #2c5e2e; font-family: arial; margin-top: 10px;">
+              <li class="pout"></li>
+            </ul>
           </fieldset>
         </form>
       </div>
@@ -161,7 +168,7 @@
       </button>
     </h2>
     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-      <div class="accordion-body shadow">
+      <div class="accordion-body" style="max-width: 600px; min-width: 200px;">
         <p class="lead my-4 text-muted" style="font-family: arial;font-size: 14px;">Welcome to our fitness community! Your health and safety are our top priorities. Before embarking on any fitness activities, please take a moment to review the following guidelines. It's important to note that the information provided here is for educational purposes only and should not be considered medical advice. Always consult with a healthcare professional before starting any new fitness program. Begin your workout with a proper warm-up to prepare your body for exercise and conclude with a cool-down to aid in recovery. Focus on maintaining proper form and technique throughout your workout to minimize the risk of injury. Gradually progress your workouts to avoid overexertion and promote long-term success. Remember to stay hydrated and fuel your body with nutritious foods to support performance and recovery. Listen to your body and heed any signs of fatigue or discomfort to prevent injury. Rest and recovery are vital components of a balanced fitness routine, so be sure to incorporate rest days into your schedule. When engaging in physical activities, always wear appropriate safety gear, such as helmets or pads, to reduce the risk of injury. Lastly, familiarize yourself with emergency procedures in case of unforeseen circumstances during exercise. Stay safe and enjoy your fitness journey.</p>
       </div>
     </div>
