@@ -1,12 +1,34 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const emailInput = document.getElementById("uniqueEmail");
-  const emailErrorMessage = document.createElement('div');
-  emailErrorMessage.classList.add('text-danger');
-  emailInput.parentNode.insertBefore(emailErrorMessage, emailInput.nextSibling);
-
-  emailInput.addEventListener('input', function () {
+const emailInput = document.getElementById("uniqueEmail")
+emailInput.addEventListener('click', function() {
+   emailInput.addEventListener('input', function () {
     const emailValue = emailInput.value;
     let missingRequirements = [];
+    const dotPos = emailValue.lastIndexOf('.');
+if (!/[A-Z]/.test(emailValue)) {
+  missingRequirements.push('at least one capital letter');
+}
+else if (emailValue.indexOf('@') === -1) {
+  missingRequirements.push('at least one @ character');
+}
+else if (!/\d/.test(emailValue)) {
+  missingRequirements.push('at least one number');
+}
+else if (dotPos === -1 || emailValue.length - dotPos < 4) {
+  missingRequirements.push('at least one dot(.) character');
+}
+else if (missingRequirements.length > 0) {
+  emailErrorMessage.textContent = 'The email must contain ' + missingRequirements.join(', ') + '.';
+} else {
+  emailErrorMessage.textContent = '';
+  missingRequirements = '';
+}
+    emailInput.focus()
+});
+emailInput.addEventListener('focus', function () {
+emailErrorMessage.textContent = '';
+emailInput.focus()
+});
+});
 
     
 
