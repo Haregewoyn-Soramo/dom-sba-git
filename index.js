@@ -26,17 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check for at least one . character and at least 3 characters after it
     const dotPos = emailValue.lastIndexOf('.');
     if (dotPos === -1 || emailValue.length - dotPos < 4) {
-      missingRequirements.push('at least one . character and at least 3 characters after it');
+      missingRequirements.push('at least one dot(.) character');
     }
 
     // Update error message
     if (missingRequirements.length > 0) {
-      emailErrorMessage.textContent = 'You should include ' + missingRequirements.join(', ') + '.';
+      emailErrorMessage.textContent = 'The email must contain ' + missingRequirements.join(', ') + '.';
     } else {
       emailErrorMessage.textContent = '';
     }
   });
 });
+
 document.addEventListener("DOMContentLoaded", function() {
   const passwordInput = document.getElementById("keyPassword");
   const passwordErrorMessage = document.createElement('div');
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Update error message
     if (missingRequirements.length > 0) {
-      passwordErrorMessage.textContent = 'You should include ' + missingRequirements.join(', ') + '.';
+      passwordErrorMessage.textContent = 'The password must contain' + missingRequirements.join(', ') + '.';
     } else {
       passwordErrorMessage.textContent = '';
     }
