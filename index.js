@@ -8,74 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const emailValue = emailInput.value;
     let missingRequirements = [];
 
-    // Check for at least one capital letter
-    if (!/[A-Z]/.test(emailValue)) {
-      missingRequirements.push('at least one capital letter');
-    }
-
-    // Check for at least one @ character
-    if (emailValue.indexOf('@') === -1) {
-      missingRequirements.push('at least one @ character');
-    }
-
-    // Check for at least one number
-    if (!/\d/.test(emailValue)) {
-      missingRequirements.push('at least one number');
-    }
-
-    // Check for at least one . character and at least 3 characters after it
-    const dotPos = emailValue.lastIndexOf('.');
-    if (dotPos === -1 || emailValue.length - dotPos < 4) {
-      missingRequirements.push('at least one dot(.) character');
-    }
-
-    // Update error message
-    if (missingRequirements.length > 0) {
-      emailErrorMessage.textContent = 'The email must contain ' + missingRequirements.join(', ') + '.';
-    } else {
-      emailErrorMessage.textContent = '';
-    }
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const passwordInput = document.getElementById("keyPassword");
-  const passwordErrorMessage = document.createElement('div');
-  passwordErrorMessage.classList.add('text-danger');
-  passwordInput.parentNode.insertBefore(passwordErrorMessage, passwordInput.nextSibling);
-
-  passwordInput.addEventListener('input', function () {
-    const passwordValue = passwordInput.value;
-    let missingRequirements = [];
-
-    // Check for at least one capital letter
-    if (!/[A-Z]/.test(passwordValue)) {
-      missingRequirements.push('at least one capital letter');
-    }
-
-    // Check for at least one number
-    if (!/\d/.test(passwordValue)) {
-      missingRequirements.push('at least one number');
-    }
-
-    // Check for at least one special character
-    if (!/[^A-Za-z0-9]/.test(passwordValue)) {
-      missingRequirements.push('at least one special character');
-    }
-
-    // Check for uniqueness
-    if (passwordValue.length !== new Set(passwordValue).size) {
-      missingRequirements.push('unique characters');
-    }
-
-    // Update error message
-    if (missingRequirements.length > 0) {
-      passwordErrorMessage.textContent = 'The password must contain' + missingRequirements.join(', ') + '.';
-    } else {
-      passwordErrorMessage.textContent = '';
-    }
-  });
-});
+    
 
 
 document.addEventListener("DOMContentLoaded", function() {
